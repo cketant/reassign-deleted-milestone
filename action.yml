@@ -1,0 +1,31 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action
+name: Reassign deleted milestone
+author: Chris Ketant
+description: Reassign PRs from a Milestone to another and delete the old Milestone
+branding:
+  icon: archive
+  color: green
+inputs:
+  repoOwner:
+    description: The account owner of the repo
+    required: true
+  repo:
+    description: The name of the repo
+    required: true
+  githubApiToken:
+    description: The api token for accessing GitHub api
+    required: true
+  deleteMilestoneNumber:
+    description: The number belonging to the milestone you want to delete
+    required: true
+  reassignMilestoneNumber:
+    description: The number belonging to the milestone you want to reassign the PRs to
+    required: true
+outputs:
+  total-prs:
+    description: Total number of PRs that are to be reassigned
+  total-prs-updated:
+    description: Acutal total number of PRs that were successfully reassigned
+runs:
+  using: node16
+  main: dist/index.js
