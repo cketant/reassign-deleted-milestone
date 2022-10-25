@@ -54,7 +54,7 @@ The total number of PRs that were successfully reassigned
 ```
 steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Reassign deleted milestone
         uses: cketant/reassign-deleted-milestone@v1.0.0
         with:

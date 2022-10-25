@@ -16,7 +16,7 @@ jobs:
           echo ::set-output name=repo_name::${GITHUB_REPOSITORY#*/}
       - name: Test Action
         id: result
-        uses: cketant/reassign-deleted-milestone@v1.0.0
+        uses: cketant/reassign-deleted-milestone@v1.0.1
         with:
           repoOwner: ${{ steps.gh_vars.outputs.repo_owner }}
           repo: ${{ steps.gh_vars.outputs.repo_name }}
