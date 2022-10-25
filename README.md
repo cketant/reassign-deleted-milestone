@@ -55,12 +55,12 @@ The total number of PRs that were successfully reassigned
 steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Reassign and Delete Milestones
-        uses: ./.github/actions/reassign-delete-milestone
+      - name: Reassign deleted milestone
+        uses: cketant/reassign-deleted-milestone@v1.0.0
         with:
           repoOwner: <OWNER-ACCOUNT-NAME>
           repo: <REPO-NAME>
-          githubApiToken: ${{ secrets.GITHUB_API_TOKEN }}
+          githubApiToken: ${{ secrets.GITHUB_TOKEN }}
           deleteMilestoneNumber: 4
           reassignMilestoneNumber: 5
 

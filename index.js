@@ -98,6 +98,7 @@ const run = async () => {
 		core.setOutput('total-prs', prs.length)
 		core.setOutput('total-prs-updated', prsUpdatedCount)
 	} catch (error) {
+		core.debug(error)
 		core.setFailed(error)
 	}
 }
