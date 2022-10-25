@@ -60,6 +60,8 @@ const run = async () => {
 		const deleteMilestoneNumber = core.getInput('deleteMilestoneNumber')
 		const reassignMilestoneNumber = core.getInput('reassignMilestoneNumber')
 
+		console.log(`Milestone to delete "${deleteMilestoneNumber}" and milestone to reassign PRs to "${reassignMilestoneNumber}"...`)
+
 		// Setup GH client
 		const octoKit = new github.getOctokit(token)
 
